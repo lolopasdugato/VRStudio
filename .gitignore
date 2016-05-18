@@ -18,12 +18,9 @@ ExportedObj/
 *.user
 *.userprefs
 *.pidb
+*.pidb.meta
 *.booproj
 *.svd
-
-
-# Unity3D generated meta files
-*.pidb.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
@@ -31,3 +28,20 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# .vs
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Assets/UnityVS*
+ProjectSettings/ProjectVersion.txt
+
+#Unity3D Lighting baked for maps
+*.exr*
+*LightingData.asset*
