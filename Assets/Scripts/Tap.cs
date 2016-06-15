@@ -15,6 +15,8 @@ public class Tap : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name.Contains("stick"))
+        {
             src.Play();
+        }
     }
 }

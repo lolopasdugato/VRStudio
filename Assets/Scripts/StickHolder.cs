@@ -15,7 +15,6 @@ public class StickHolder : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		print (gameObject.GetComponent<RigidHand> ().GetLeapHand ().GrabStrength);
 		if (transform.Find ("palm/stick").gameObject.activeSelf)
 		{
             if (gameObject.GetComponent<RigidHand>().GetLeapHand().GrabStrength < grabStrengthOff)
