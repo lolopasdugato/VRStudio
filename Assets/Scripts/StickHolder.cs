@@ -11,6 +11,8 @@ public class StickHolder : MonoBehaviour {
 	public float grabStrengthOff = 0.2f;
 	public float grabOffTimer = 1.0f;
 	float count = 0.0f;
+
+	public bool isHeld { get; private set; }
 	
 	// Update is called once per frame
 	void Update ()
@@ -18,13 +20,14 @@ public class StickHolder : MonoBehaviour {
 		print (gameObject.GetComponent<RigidHand> ().GetLeapHand ().GrabStrength);
 		if (transform.Find ("palm/stick").gameObject.activeSelf)
 		{
-            if (gameObject.GetComponent<RigidHand>().GetLeapHand().GrabStrength < grabStrengthOff)
+            if (gameObject.GetComponent<RigidHand> ().GetLeapHand().GrabStrength < grabStrengthOff)
             {
                 count += Time.deltaTime;
                 if (count >= grabOffTimer)
                 {
                     count = 0.0f;
                     transform.Find("palm/stick").gameObject.SetActive(false);
+					isHeld = false;
                 }
             }
             else
@@ -35,6 +38,7 @@ public class StickHolder : MonoBehaviour {
 		else if (gameObject.GetComponent<RigidHand>().GetLeapHand().GrabStrength >= grabStrengthOn)
 		{
 			transform.Find("palm/stick").gameObject.SetActive(true);
+			isHeld = true;
 		}
 	}		
 }
